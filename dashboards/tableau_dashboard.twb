@@ -1,3 +1,165 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <workbook>
+  <datasources>
+    <datasource name="Social Media Data" filename="datasources.xml" />
+    <datasource name="Hourly Aggregation" filename="datasources.xml" />
+    <datasource name="Weekday Aggregation" filename="datasources.xml" />
+    <datasource name="Platform Aggregation" filename="datasources.xml" />
+    <datasource name="Post Type Aggregation" filename="datasources.xml" />
+  </datasources>
+  
+  <worksheets>
+    <!-- Dashboard 1: Engagement Overview -->
+    <worksheet name="Total Interactions Over Time">
+      <table>
+        <view>
+          <datasource name="Social Media Data" />
+          <columns>
+            <column name="day" type="date" />
+            <column name="interactions" type="int" />
+          </columns>
+        </view>
+      </table>
+    </worksheet>
+    
+    <worksheet name="Daily Weekly Trend">
+      <table>
+        <view>
+          <datasource name="Social Media Data" />
+          <columns>
+            <column name="day" type="date" />
+            <column name="engagement_rate" type="float" />
+          </columns>
+        </view>
+      </table>
+    </worksheet>
+    
+    <worksheet name="Platform Comparison">
+      <table>
+        <view>
+          <datasource name="Platform Aggregation" />
+          <columns>
+            <column name="platform" type="string" />
+            <column name="avg_engagement_rate" type="float" />
+            <column name="total_posts" type="int" />
+          </columns>
+        </view>
+      </table>
+    </worksheet>
+    
+    <worksheet name="Post Type Distribution">
+      <table>
+        <view>
+          <datasource name="Post Type Aggregation" />
+          <columns>
+            <column name="post_type" type="string" />
+            <column name="avg_engagement_rate" type="float" />
+            <column name="post_count" type="int" />
+          </columns>
+        </view>
+      </table>
+    </worksheet>
+    
+    <!-- Dashboard 2: Timing Insights -->
+    <worksheet name="Best Time to Post">
+      <table>
+        <view>
+          <datasource name="Hourly Aggregation" />
+          <columns>
+            <column name="hour" type="int" />
+            <column name="avg_engagement_rate" type="float" />
+          </columns>
+        </view>
+      </table>
+    </worksheet>
+    
+    <worksheet name="Best Day">
+      <table>
+        <view>
+          <datasource name="Weekday Aggregation" />
+          <columns>
+            <column name="weekday_name" type="string" />
+            <column name="avg_engagement_rate" type="float" />
+          </columns>
+        </view>
+      </table>
+    </worksheet>
+    
+    <worksheet name="Heatmap Hour vs Weekday">
+      <table>
+        <view>
+          <datasource name="Social Media Data" />
+          <columns>
+            <column name="hour" type="int" />
+            <column name="weekday" type="int" />
+            <column name="engagement_rate" type="float" />
+          </columns>
+        </view>
+      </table>
+    </worksheet>
+    
+    <!-- Dashboard 3: Content Insights -->
+    <worksheet name="Caption Length vs Engagement">
+      <table>
+        <view>
+          <datasource name="Social Media Data" />
+          <columns>
+            <column name="caption_length" type="int" />
+            <column name="engagement_rate" type="float" />
+          </columns>
+        </view>
+      </table>
+    </worksheet>
+    
+    <worksheet name="Word Cloud">
+      <table>
+        <view>
+          <datasource name="Social Media Data" />
+          <columns>
+            <column name="caption" type="string" />
+          </columns>
+        </view>
+      </table>
+    </worksheet>
+    
+    <worksheet name="Top Performing Posts">
+      <table>
+        <view>
+          <datasource name="Social Media Data" />
+          <columns>
+            <column name="post_id" type="string" />
+            <column name="engagement_rate" type="float" />
+            <column name="interactions" type="int" />
+          </columns>
+        </view>
+      </table>
+    </worksheet>
+  </worksheets>
+  
+  <dashboards>
+    <dashboard name="Engagement Overview">
+      <zones>
+        <zone name="Total Interactions Over Time" type="worksheet" />
+        <zone name="Daily Weekly Trend" type="worksheet" />
+        <zone name="Platform Comparison" type="worksheet" />
+        <zone name="Post Type Distribution" type="worksheet" />
+      </zones>
+    </dashboard>
+    
+    <dashboard name="Timing Insights">
+      <zones>
+        <zone name="Best Time to Post" type="worksheet" />
+        <zone name="Best Day" type="worksheet" />
+        <zone name="Heatmap Hour vs Weekday" type="worksheet" />
+      </zones>
+    </dashboard>
+    
+    <dashboard name="Content Insights">
+      <zones>
+        <zone name="Caption Length vs Engagement" type="worksheet" />
+        <zone name="Word Cloud" type="worksheet" />
+        <zone name="Top Performing Posts" type="worksheet" />
+      </zones>
+    </dashboard>
+  </dashboards>
 </workbook>

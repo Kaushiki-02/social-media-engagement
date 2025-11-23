@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<dashboard-metadata>
+  <project-info>
+    <name>Social Media Engagement Analysis</name>
+    <description>Dashboard suite for analyzing social media engagement patterns</description>
+    <version>1.0</version>
+  </project-info>
+  
+  <dashboards>
+    <dashboard id="1" name="Engagement Overview">
+      <description>Overview of key engagement metrics across platforms and post types</description>
+      <visualizations>
+        <viz id="1" type="line-chart" name="Total Interactions Over Time">
+          <data-source>cleaned_posts.csv</data-source>
+          <dimensions>
+            <x-axis>day</x-axis>
+            <y-axis>interactions</y-axis>
+          </dimensions>
+        </viz>
+        <viz id="2" type="line-chart" name="Daily Weekly Trend">
+          <data-source>cleaned_posts.csv</data-source>
+          <dimensions>
+            <x-axis>day</x-axis>
+            <y-axis>engagement_rate</y-axis>
+          </dimensions>
+        </viz>
+        <viz id="3" type="bar-chart" name="Platform Comparison">
+          <data-source>platform_aggregation.csv</data-source>
+          <dimensions>
+            <x-axis>platform</x-axis>
+            <y-axis>avg_engagement_rate</y-axis>
+          </dimensions>
+        </viz>
+        <viz id="4" type="bar-chart" name="Post Type Distribution">
+          <data-source>post_type_aggregation.csv</data-source>
+          <dimensions>
+            <x-axis>post_type</x-axis>
+            <y-axis>avg_engagement_rate</y-axis>
+          </dimensions>
+        </viz>
+      </visualizations>
+    </dashboard>
+    
+    <dashboard id="2" name="Timing Insights">
+      <description>Analysis of optimal posting times and days for maximum engagement</description>
+      <visualizations>
+        <viz id="5" type="bar-chart" name="Best Time to Post">
+          <data-source>hourly_aggregation.csv</data-source>
+          <dimensions>
+            <x-axis>hour</x-axis>
+            <y-axis>avg_engagement_rate</y-axis>
+          </dimensions>
+        </viz>
+        <viz id="6" type="bar-chart" name="Best Day">
+          <data-source>weekday_aggregation.csv</data-source>
+          <dimensions>
+            <x-axis>weekday_name</x-axis>
+            <y-axis>avg_engagement_rate</y-axis>
+          </dimensions>
+        </viz>
+        <viz id="7" type="heatmap" name="Heatmap Hour vs Weekday">
+          <data-source>cleaned_posts.csv</data-source>
+          <dimensions>
+            <x-axis>hour</x-axis>
+            <y-axis>weekday</y-axis>
+            <color>engagement_rate</color>
+          </dimensions>
+        </viz>
+      </visualizations>
+    </dashboard>
+    
+    <dashboard id="3" name="Content Insights">
+      <description>Insights into content characteristics that drive engagement</description>
+      <visualizations>
+        <viz id="8" type="scatter-plot" name="Caption Length vs Engagement">
+          <data-source>cleaned_posts.csv</data-source>
+          <dimensions>
+            <x-axis>caption_length</x-axis>
+            <y-axis>engagement_rate</y-axis>
+          </dimensions>
+        </viz>
+        <viz id="9" type="word-cloud" name="Word Cloud">
+          <data-source>cleaned_posts.csv</data-source>
+          <dimensions>
+            <text>caption</text>
+          </dimensions>
+        </viz>
+        <viz id="10" type="table" name="Top Performing Posts">
+          <data-source>cleaned_posts.csv</data-source>
+          <dimensions>
+            <columns>post_id, engagement_rate, interactions</columns>
+          </dimensions>
+        </viz>
+      </visualizations>
+    </dashboard>
+  </dashboards>
+  
+  <filters>
+    <filter name="Platform" type="categorical" datasource="cleaned_posts.csv" column="platform" />
+    <filter name="Post Type" type="categorical" datasource="cleaned_posts.csv" column="post_type" />
+    <filter name="Date Range" type="date" datasource="cleaned_posts.csv" column="day" />
+  </filters>
+</dashboard-metadata>

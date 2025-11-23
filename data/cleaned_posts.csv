@@ -1,0 +1,9 @@
+post_id,timestamp,platform,post_type,caption,likes,comments,shares,reach,interactions,engagement_rate,hour,weekday,caption_length,day
+post_001,2023-06-15 14:30:00,instagram,image,Beautiful sunset at the beach,150.0,25.0,12.0,2000.0,187.0,0.0935,14,3,29,2023-06-15
+post_002,2023-06-16 09:15:00,facebook,video,Cooking tutorial: How to make pasta,85.0,10.0,5.0,1500.0,100.0,0.06666666666666667,9,4,35,2023-06-16
+post_003,2023-06-17 18:45:00,instagram,reel,Dance challenge with friends,320.0,65.0,40.0,3500.0,425.0,0.12142857142857143,18,5,28,2023-06-17
+post_004,2023-06-18 12:00:00,twitter,image,New product launch announcement,75.0,8.0,3.0,1200.0,86.0,0.07166666666666667,12,6,31,2023-06-18
+post_005,2023-06-19 20:30:00,instagram,story,Behind the scenes at our office,95.0,15.0,7.0,1800.0,117.0,0.065,20,0,31,2023-06-19
+post_006,2023-06-20 11:20:00,facebook,image,Team building event photos,68.0,12.0,4.0,1000.0,84.0,0.084,11,1,26,2023-06-20
+post_007,2023-06-21 16:40:00,instagram,video,Product demo walkthrough,180.0,30.0,18.0,2800.0,228.0,0.08142857142857143,16,2,24,2023-06-21
+post_008,2023-06-22 08:50:00,linkedin,article,Industry insights and trends,52.0,5.0,2.0,800.0,59.0,0.07375,8,3,28,2023-06-22

@@ -1,0 +1,9 @@
+post_id,timestamp,platform,post_type,caption,likes,comments,shares,reach
+post_001,2023-06-15 14:30:00,Instagram,image,Beautiful sunset at the beach,150,25,12,2000
+post_002,2023-06-16 09:15:00,Facebook,video,Cooking tutorial: How to make pasta,85,10,5,1500
+post_003,2023-06-17 18:45:00,Instagram,reel,Dance challenge with friends,320,65,40,3500
+post_004,2023-06-18 12:00:00,Twitter,image,New product launch announcement,75,8,3,1200
+post_005,2023-06-19 20:30:00,Instagram,story,Behind the scenes at our office,95,15,7,1800
+post_006,2023-06-20 11:20:00,Facebook,image,Team building event photos,68,12,4,1000
+post_007,2023-06-21 16:40:00,Instagram,video,Product demo walkthrough,180,30,18,2800
+post_008,2023-06-22 08:50:00,LinkedIn,article,Industry insights and trends,52,5,2,800

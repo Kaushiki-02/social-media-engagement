@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<datasources>
+  <datasource name="Social Media Data" version="1.0">
+    <connection class="textscan" filename="../data/cleaned_posts.csv" />
+    <columns>
+      <column name="post_id" type="string" />
+      <column name="timestamp" type="datetime" />
+      <column name="platform" type="string" />
+      <column name="post_type" type="string" />
+      <column name="caption" type="string" />
+      <column name="likes" type="int" />
+      <column name="comments" type="int" />
+      <column name="shares" type="int" />
+      <column name="reach" type="int" />
+      <column name="interactions" type="int" />
+      <column name="engagement_rate" type="float" />
+      <column name="hour" type="int" />
+      <column name="weekday" type="int" />
+      <column name="caption_length" type="int" />
+      <column name="day" type="date" />
+    </columns>
+  </datasource>
+  
+  <datasource name="Hourly Aggregation" version="1.0">
+    <connection class="textscan" filename="../data/hourly_aggregation.csv" />
+    <columns>
+      <column name="hour" type="int" />
+      <column name="avg_engagement_rate" type="float" />
+      <column name="post_count" type="int" />
+    </columns>
+  </datasource>
+  
+  <datasource name="Weekday Aggregation" version="1.0">
+    <connection class="textscan" filename="../data/weekday_aggregation.csv" />
+    <columns>
+      <column name="weekday" type="int" />
+      <column name="weekday_name" type="string" />
+      <column name="avg_engagement_rate" type="float" />
+      <column name="post_count" type="int" />
+    </columns>
+  </datasource>
+  
+  <datasource name="Platform Aggregation" version="1.0">
+    <connection class="textscan" filename="../data/platform_aggregation.csv" />
+    <columns>
+      <column name="platform" type="string" />
+      <column name="avg_engagement_rate" type="float" />
+      <column name="total_interactions" type="int" />
+      <column name="total_posts" type="int" />
+    </columns>
+  </datasource>
+  
+  <datasource name="Post Type Aggregation" version="1.0">
+    <connection class="textscan" filename="../data/post_type_aggregation.csv" />
+    <columns>
+      <column name="post_type" type="string" />
+      <column name="avg_engagement_rate" type="float" />
+      <column name="post_count" type="int" />
+    </columns>
+  </datasource>
+</datasources>
